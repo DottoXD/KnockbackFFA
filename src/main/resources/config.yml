@@ -1,0 +1,34 @@
+# CopperKnockbackFFA config file
+database:
+  host: 127.0.0.1
+  port: 3306
+  username: mysql
+  password: mystrongpassword
+  database: copperknockbackffa
+messages:
+  join: "&7[&a+&7] &7%player%"
+  leave: "&7[&c-&7] &7%player%"
+  prefix: "&b&lKITPVP &f» &7"
+  death: "&c%player% &7died!"
+  kill: "&c%player% &7was killed by %attacker%"
+  deathtitle: "&cYou died!"
+  deathsubtitle: "&fYou will respawn in &c1 &fsecond!"
+  mapswitch: "The &cmap &7has been changed!"
+items:
+  blocks: 64
+  enderpearls: 1
+itemnames:
+  knockbackstick: "&6&lKnockback Stick"
+  enderpearls: "&2&lEnder pearl"
+  blocks: "&c&lBlocks"
+  speedboost: "&b&lSpeed boost"
+  booster: "&a&lBooster"
+misc:
+  falldamage: false
+  switchtime: 300
+spawn:
+  x: 0
+  y: 0
+  z: 0
+maps:
+  - world

@@ -1,0 +1,6 @@
+name: "CopperKnockbackFFA"
+version: "0.0.1"
+author: Dotto
+main: me.dotto.CopperKnockbackFFA.KnockbackFFA
+softdepend:
+  - PlaceholderAPI
