@@ -20,5 +20,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: CopperAX
+          name: CopperKnockbackFFA
           path: ./target/CopperKnockbackFFA-1.0-SNAPSHOT.jar
