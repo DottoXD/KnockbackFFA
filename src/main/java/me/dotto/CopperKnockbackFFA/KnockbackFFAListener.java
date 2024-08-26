@@ -293,8 +293,10 @@ public class KnockbackFFAListener implements Listener {
             JumpPad.setItemMeta(JumpPadMeta);
 
             player.getInventory().addItem(Stick, EnderPearl, SandStone, Speed, JumpPad);
+        } else if(EntityDamageEvent.DamageCause.DROWNING == event.getCause()) {
+            event.setCancelled(true);
         } else {
-            if(config.getBoolean("misc.falldamage") == false) {
+            if(!config.getBoolean("misc.falldamage")) {
                 if(event.getCause() == EntityDamageEvent.DamageCause.FALL) {
                     player.setFallDistance(0);
                     event.setCancelled(true);

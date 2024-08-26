@@ -13,13 +13,12 @@ public class Database {
 
     public Database(FileConfiguration Config, Logger GetLogger) {
         try {
-
-            connection = DriverManager.getConnection("jdbc:mysql://" + Config.getString("database.host") + ":" + Config.getString("database.port") + "/" + Config.getString("database.database"), Config.getString("database.username"), Config.getString("database.password"));
+            String url = "jdbc:mysql://" + Config.getString("database.host") + ":" + Config.getString("database.port") + "/" + Config.getString("database.database") + "?autoReconnect=true";
+            connection = DriverManager.getConnection(url, Config.getString("database.username"), Config.getString("database.password"));
             GetLogger.info("Successfully connected to your MySQL database!");
             PreparedStatement statement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS CopperKnockbackFFA(uuid varchar(36), kills int, deaths int, killstreak int, bounty int);");
             statement.executeUpdate();
         } catch(SQLException error) {
-            error.printStackTrace();
             GetLogger.info("There was an error while connecting to MySQL!");
         }
     }
@@ -29,9 +28,7 @@ public class Database {
             if (connection!=null && !connection.isClosed()) {
                 connection.close();
             }
-        } catch(Exception error) {
-            error.printStackTrace();
-        }
+        } catch(Exception ignored) {}
     }
 
     static Connection GetConnection() {

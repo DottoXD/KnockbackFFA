@@ -1,0 +1,24 @@
+name: Ship CopperKnockbackFFA
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v3
+        with:
+          java-version: '1.8'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build CopperKnockbackFFA
+        run: mvn clean install
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: CopperAX
+          path: ./target/CopperKnockbackFFA.jar

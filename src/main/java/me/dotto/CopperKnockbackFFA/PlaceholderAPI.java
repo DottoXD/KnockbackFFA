@@ -102,8 +102,7 @@ public class PlaceholderAPI extends PlaceholderExpansion {
     ResultSet GetPlayerData(Player Player) throws SQLException {
         PreparedStatement statement = Database.GetConnection().prepareStatement("SELECT * FROM CopperKnockbackFFA WHERE uuid=(?);");
         statement.setString(1, String.valueOf(Player.getUniqueId()));
-        ResultSet results = statement.executeQuery();
 
-        return results;
+        return statement.executeQuery();
     }
 }

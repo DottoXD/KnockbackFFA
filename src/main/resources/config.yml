@@ -8,7 +8,7 @@ database:
 messages:
   join: "&7[&a+&7] &7%player%"
   leave: "&7[&c-&7] &7%player%"
-  prefix: "&b&lKITPVP &f» &7"
+  prefix: "&b&lKnockbackFFA &f» &7"
   death: "&c%player% &7died!"
   kill: "&c%player% &7was killed by %attacker%"
   deathtitle: "&cYou died!"
