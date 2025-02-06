@@ -19,7 +19,7 @@ public class KnockbackFFA extends JavaPlugin {
 
         if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             getLogger().info("Just hooked into PlaceholderAPI!");
-            new PlaceholderAPI(this, listener).register();
+            new PlaceholderAPI(listener).register();
         }
 
         db = new Database(config, getLogger());

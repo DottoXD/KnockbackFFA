@@ -2,32 +2,31 @@ package me.dotto.CopperKnockbackFFA;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class PlaceholderAPI extends PlaceholderExpansion {
-    private final KnockbackFFA plugin;
-    private KnockbackFFAListener listener;
+    private final KnockbackFFAListener listener;
 
-    public PlaceholderAPI(KnockbackFFA Plugin, KnockbackFFAListener Listener) {
-        this.plugin = Plugin;
+    public PlaceholderAPI( KnockbackFFAListener Listener) {
         this.listener = Listener;
     }
 
     @Override
-    public String getAuthor() {
+    public @NotNull String getAuthor() {
         return "Dotto";
     }
 
     @Override
-    public String getIdentifier() {
+    public @NotNull String getIdentifier() {
         return "copperknockbackffa";
     }
 
     @Override
-    public String getVersion() {
+    public @NotNull String getVersion() {
         return "0.0.1";
     }
 

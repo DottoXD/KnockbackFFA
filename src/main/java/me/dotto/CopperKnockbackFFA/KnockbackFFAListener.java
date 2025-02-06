@@ -3,7 +3,6 @@ package me.dotto.CopperKnockbackFFA;
 import org.bukkit.*;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -23,7 +22,6 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
-import org.spigotmc.event.player.PlayerSpawnLocationEvent;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,8 +33,8 @@ public class KnockbackFFAListener implements Listener {
     FileConfiguration config;
     Plugin plugin;
 
-    private HashMap<String, String> lastDamager = new HashMap<>();
-    private List<String> maps;
+    private final HashMap<String, String> lastDamager = new HashMap<>();
+    private final List<String> maps;
     private int currentMapIndex = 0;
     private String currentMap;
     int mapChangeSeconds;
